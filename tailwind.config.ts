@@ -8,9 +8,22 @@ export default {
   ],
   theme: {
     extend: {
+      container: {
+        center: true,
+        screens: {
+          lg: '1440px',
+        },
+      },
+      fontFamily: { 
+        serif: ["var(--font-kommuna-serif)", "serif"],
+        sans: ["var(--font-stratos-sans)", "sans-serif"],
+      },
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: "#000000",
+        accent: "#ff4d26",
+      },
+      fontSize: {
+        base: "1.1rem",
       },
     },
   },
