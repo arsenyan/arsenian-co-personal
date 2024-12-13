@@ -36,8 +36,8 @@ export default function RootLayout({
         {children}
        </main>
        <Footer />
-      <SanityLive />
       </body>
+      <SanityLive />
     </html>
   );
 }

@@ -1,4 +1,4 @@
-import { client } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/live';
 import Hero from '@/components/page/Hero';
 import PointsList from '@/components/page/PointsList';
 import ProjectList from '@/components/page/ProjectList';
@@ -20,7 +20,7 @@ export default async function HomePage() {
       }
     }
   }`;
-  const settings = await client.fetch(query);
+  const {data: settings} = await sanityFetch({ query });
 
   return (
     <>

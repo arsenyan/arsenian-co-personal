@@ -1,4 +1,4 @@
-import { client } from '@/sanity/lib/client';
+import { sanityFetch } from '@/sanity/lib/live';
 import ProjectList from '@/components/page/reuse/ProjectList';
 
 export default async function ProjectsPage() {
@@ -14,11 +14,13 @@ export default async function ProjectsPage() {
       _key
     }
   }`;
-  const data = await client.fetch(query);
+  const { data: data } = await sanityFetch({ query });
 
   return (
+    <>
     <div>
       <ProjectList projects={data.projects} />
     </div>
+    </>
   );
 }
