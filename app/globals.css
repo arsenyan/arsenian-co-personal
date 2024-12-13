@@ -1,14 +1,16 @@
+@import './hamburgers/hamburgers.css'; 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --color-primary: #3490dc;
+  body {
+    @apply font-sans antialiased;
   }
 
-  body {
-    @apply font-sans text-base;
+  .sup {
+    font-variant-position: super;
   }
 }
 
@@ -26,8 +28,5 @@
 @layer utilities {
   .font-serif {
     font-variation-settings: "wdth" 600;
-  }
-  .font-super {
-    font-variant-position: super;
   }
 }

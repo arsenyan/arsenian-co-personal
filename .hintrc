@@ -3,6 +3,15 @@
     "development"
   ],
   "hints": {
-    "typescript-config/consistent-casing": "off"
+    "typescript-config/consistent-casing": "off",
+    "compat-api/css": [
+      "default",
+      {
+        "ignore": [
+          "font-variant-position",
+          "font-variant-position: super"
+        ]
+      }
+    ]
   }
 }

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import ".././globals.css";
+import "../globals.css"
 import Header from "@/components/Header";
+import { SanityLive } from "@/sanity/lib/live";
 
 const kommuna = localFont({
-  src: ".././fonts/KommunaRegular.woff",
+  src: ".././fonts/KommunaVariable.woff2",
   variable: "--font-kommuna-serif",
-  weight: "400",
 });
 const stratos = localFont({
   src: ".././fonts/StratosLCRegular.woff",
@@ -29,10 +29,12 @@ export default function RootLayout({
       <body
         className={`${kommuna.variable} ${stratos.variable} antialiased`}
       >
-        <main className="container px-4">
-          <Header />
+        <Header />
+        <main className="container px-4 mt-14">
+          
         {children}
        </main>
+      <SanityLive />
       </body>
     </html>
   );

@@ -26,6 +26,49 @@ export const settingsType = defineType({
             },
         }),
         defineField({
+            name: 'points',
+            type: 'array',
+            of: [{ 
+                type: 'document',
+                fields: [
+                    defineField({
+                        name: 'number',
+                        type: 'string',
+                        title: 'Number',
+                    }),
+                    defineField({
+                        name: 'description',
+                        type: 'text',
+                        title: 'Description',
+                    }),
+                ], 
+            }],
+        }),
+        defineField({
+            name: 'projectList',
+            type: 'array',
+            of: [{ 
+                type: 'document',
+                fields: [
+                    defineField({
+                        name: 'name',
+                        type: 'string',
+                        title: 'Company Name',
+                    }),
+                    defineField({
+                        name: 'description',
+                        type: 'text',
+                        title: 'Description',
+                    }),
+                    defineField({
+                        name: 'city',
+                        type: 'string',
+                        title: 'City',
+                    }),
+                ], 
+            }],
+        }),
+        defineField({
             name: 'socialLinks',
             type: 'array',
             title: 'Social Links',
