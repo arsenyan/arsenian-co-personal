@@ -1,9 +1,11 @@
 import { defineType, defineField } from 'sanity';
+import { RiSettings4Fill } from "react-icons/ri";
 
 export const settingsType = defineType({
     name: 'settings',
     type: 'document',
     title: 'Settings',
+    icon: RiSettings4Fill,
     fields: [
         defineField({
             name: 'siteTitle',

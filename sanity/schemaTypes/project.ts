@@ -1,14 +1,25 @@
 import { defineField, defineType } from "sanity"
+import { GrProjects } from "react-icons/gr";
 
 export const projectType = defineType ({
     name: 'project',
     title: 'Project',
     type: 'document',
+    icon: GrProjects,  
     fields: [
         defineField({
             name: 'title',
             title: 'Title',
             type: 'string'
+        }),
+        defineField({
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'title',
+            },
+            validation: Rule => Rule.required(),
         }),
         defineField({
             name: 'cover',

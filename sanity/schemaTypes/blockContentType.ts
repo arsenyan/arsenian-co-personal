@@ -1,4 +1,5 @@
 import {defineType, defineArrayMember} from 'sanity'
+import { FaFileImage } from "react-icons/fa";
 
 /**
  * This is the schema type for block content used in the post document type
@@ -62,6 +63,7 @@ export const blockContentType = defineType({
     defineArrayMember({
       type: 'image',
       options: {hotspot: true},
+      icon: FaFileImage,
       fields: [
         {
           name: 'alt',

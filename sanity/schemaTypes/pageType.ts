@@ -1,9 +1,11 @@
 import { defineField, defineType } from "sanity"
+import { IoDocumentOutline } from "react-icons/io5";
 
 export const pageType = defineType ({
     name: 'projects',
     title: 'Projects list',
     type: 'document',
+    icon: IoDocumentOutline,
     fields: [
         defineField({
             name: 'title',

@@ -3,7 +3,7 @@ import EducationFellowships from '@/components/page/EducationFellowships';
 import Work from '@/components/page/Work';
 
 
-export default async function HomePage() {
+export default async function CV() {
   const query = `*[_type == "curriculum"][0]`;
   const cv = await client.fetch(query);
 

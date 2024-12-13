@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css"
 import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
 
 const kommuna = localFont({
@@ -30,10 +31,11 @@ export default function RootLayout({
         className={`${kommuna.variable} ${stratos.variable} antialiased`}
       >
         <Header />
-        <main className="container px-4 mt-14">
+        <main className="container px-4 md:mt-20 mt-14">
           
         {children}
        </main>
+       <Footer />
       <SanityLive />
       </body>
     </html>
