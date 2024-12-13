@@ -18,7 +18,6 @@ export default async function ProjectsPage() {
 
   return (
     <div>
-      <h1>Projects</h1>
       <ProjectList projects={data.projects} />
     </div>
   );

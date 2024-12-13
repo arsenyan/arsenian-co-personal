@@ -11,7 +11,7 @@ async function ProjectPage({
 }) {
 
   const { slug } = await params;
-  const project = await getProjectBySlug(slug);
+  await getProjectBySlug(slug);
   return (
     <div>page</div>
   )
