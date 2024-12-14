@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 import { getProjectBySlug } from '@/sanity/lib/settings/getProjectBySlug';
 import { notFound } from "next/navigation";
 import Image from 'next/image';
