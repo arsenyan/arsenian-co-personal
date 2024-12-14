@@ -4,6 +4,7 @@ import "../globals.css"
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
+import { Analytics } from "@vercel/analytics/next"
 
 const kommuna = localFont({
   src: ".././fonts/KommunaVariable.woff2",
@@ -35,6 +36,7 @@ export default function RootLayout({
         {children} <SanityLive />
        </main>
        <Footer />
+       <Analytics/>
       </body>
     </html>
   );
