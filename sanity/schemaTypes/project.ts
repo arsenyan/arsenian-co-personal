@@ -1,4 +1,4 @@
-import { defineField, defineType } from "sanity"
+import { defineField, defineArrayMember, defineType } from "sanity"
 import { GrProjects } from "react-icons/gr";
 
 export const projectType = defineType ({
@@ -62,6 +62,11 @@ export const projectType = defineType ({
             type: 'blockContent'
         }),
         defineField({
+            name: 'creditsMain',
+            title: 'Credits Main Block',
+            type: 'blockContent'
+        }),
+        defineField({
             name: 'quoteCredits',
             title: 'Quote',
             description: 'Quote for the credits',
@@ -72,15 +77,14 @@ export const projectType = defineType ({
             ]}],
         }),
         defineField({
-            name: 'gallery',
+            name: 'galleryPage',
             title: 'Gallery',
             description: 'Gallery of images and videos',
             type: 'array',
-            of: [{ type: 'object', fields: [
-                { name: 'galleryItems', title: 'Choose Images', type: 'array', of: [{ type: 'image', fields: [{ name: 'copyright', type: 'string' }, { name: 'alt', title: 'Alternative Text', description: 'Important for SEO and accessibility.', type: 'string', validation: Rule => Rule.required() }] }] },
-                { name: 'video', title: 'Video', type: 'url' },
-                { name: 'columns', title: 'Columns', type: 'number' }
-            ]}],
-        }),
+            of: [
+            defineArrayMember({ name: 'gallery', type: 'gallery', }),
+            defineArrayMember({ name: 'video', type: 'video' }),
+            ]
+            }),
     ],
 })

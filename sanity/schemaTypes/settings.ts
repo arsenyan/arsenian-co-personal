@@ -18,6 +18,11 @@ export const settingsType = defineType({
             title: 'Description',
         }),
         defineField({
+            name: 'contacts',
+            type: 'blockContent',
+            title: 'Contacts',
+        }),
+        defineField({
             name: 'mainImage',
             type: 'image',
             title: 'Main Image',

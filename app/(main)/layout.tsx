@@ -32,12 +32,10 @@ export default function RootLayout({
       >
         <Header />
         <main className="container px-4 md:mt-20 mt-14">
-          
-        {children}
+        {children} <SanityLive />
        </main>
        <Footer />
       </body>
-      <SanityLive />
     </html>
   );
 }
