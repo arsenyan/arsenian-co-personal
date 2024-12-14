@@ -37,7 +37,7 @@ export const pageType = defineType ({
                     defineField({
                         name: 'role',
                         title: 'Description',
-                        type: 'text'
+                        type: 'blockContent'
                     }),
                     defineField({
                         name: 'reference',

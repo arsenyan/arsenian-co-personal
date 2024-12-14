@@ -2,15 +2,16 @@ import React from 'react';
 import Link from 'next/link';
 
 const menuColumn1 = [
+    { href: "/projects", label: "Projects" },
     { href: "/", label: "About Me" },
     { href: "/contacts", label: "Contacts" },
-    { href: "/consultations", label: "Consultations" },
+
   ];
 
   const menuColumn2 = [
-    { href: "/projects", label: "Projects" },
     { href: "/cv", label: "Education" },
     { href: "/cv", label: "Work Experience" },
+    { href: "/", label: " " },
   ];
 
 const Footer: React.FC = () => {

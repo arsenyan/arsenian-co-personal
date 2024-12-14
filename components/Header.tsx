@@ -7,7 +7,6 @@ import MobileMenu from "./MobileMenu";
 const menuItems = [
   { href: "/projects", label: "Projects" },
   { href: "/cv", label: "CV" },
-  { href: "/consultations", label: "Consultations" },
   { href: "/contacts", label: "Contacts" },
 ];
 
