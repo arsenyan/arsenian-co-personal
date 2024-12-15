@@ -49,7 +49,6 @@ const Hero: React.FC<MainContentProps> = ({ mainImage, description }) => {
           id={mainImage.asset._id}
           baseUrl={`https://cdn.sanity.io/images/${process.env.NEXT_PUBLIC_SANITY_PROJECT_ID}/production/`}
           hotspot={mainImage.hotspot}
-          preview={mainImage.asset.metadata.lqip}
           style={{ objectPosition }}
           alt="test"
         />
