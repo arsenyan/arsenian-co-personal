@@ -1,5 +1,19 @@
 import { sanityFetch } from '@/sanity/lib/live';
+import { Metadata } from 'next';
 import { PortableText } from 'next-sanity';
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const query = `*[_type == "settings"][0]`;
+  const { data: settings } = await sanityFetch({ query });
+  return {
+    title: `Contacts | ${settings.siteTitle}`,
+    description: '',
+    openGraph: {
+      title: `Contacts | ${settings.siteTitle}`,
+      description: 'Artem Arsenian is a nomadic art manager, producer and curator of performative art, marketing/digital media specialist and researcher. Based between France and Germany.',
+    },
+  };
+};
 
 export default async function CV() {
   const query = `*[_type == "settings"][0]{

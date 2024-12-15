@@ -4,6 +4,20 @@ import PointsList from '@/components/page/PointsList';
 import ProjectList from '@/components/page/ProjectList';
 import Announcement from '@/components/page/Announcement';
 import Head from 'next/head';
+import { Metadata } from 'next';
+
+export const generateMetadata = async (): Promise<Metadata> => {
+  const query = `*[_type == "settings"][0]`;
+  const { data: settings } = await sanityFetch({ query });
+  return {
+    title: `${settings.siteTitle}`,
+    description: '',
+    openGraph: {
+      title: `${settings.siteTitle}`,
+      description: 'Artem Arsenian is a nomadic art manager, producer and curator of performative art, marketing/digital media specialist and researcher. Based between France and Germany.',
+    },
+  };
+};
 
 export default async function HomePage() {
   const query = `*[_type == "settings"][0]{
