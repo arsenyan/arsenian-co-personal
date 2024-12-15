@@ -1,7 +1,21 @@
+import { Metadata } from 'next';
 import { getProjectBySlug } from '@/sanity/lib/settings/getProjectBySlug';
 import { notFound } from "next/navigation";
 import ImageComponent from '@/components/image';
 import { PortableText } from 'next-sanity';
+
+export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
+  const { slug } = await params;
+  const project = await getProjectBySlug(slug);
+  return {
+    title: `${project.title} | Artem Arsenian`,
+    description: 'Realised Project',
+    openGraph: {
+      title: `${project.title}`,
+      description: 'Realised Project',
+    },
+  };
+};
 
 async function ProjectPage({ 
   params,
