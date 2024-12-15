@@ -8,32 +8,20 @@ export const getProjectBySlug = async (slug: string) => {
         ] {
             ...,
             cover {
+                ...,
                 asset-> {
-                    url,
-                    metadata {
-                        dimensions,
-                        lqip
-                    },
+                   ...,
                 },
-                alt,
-                copyright
             },
             galleryPage[] {
                 _key,
                 _type,
                 url,
                 images[] {
-                    _key,
-                    _type,
+                    ...,
                     asset-> {
-                        url,
-                        metadata {
-                            dimensions,
-                            lqip
-                        },
+                        ...
                     },
-                    alt,
-                    copyright
                 }
             }
         } | order(name asc)[0]

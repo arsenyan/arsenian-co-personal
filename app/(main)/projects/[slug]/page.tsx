@@ -2,7 +2,7 @@
 
 import { getProjectBySlug } from '@/sanity/lib/settings/getProjectBySlug';
 import { notFound } from "next/navigation";
-import Image from 'next/image';
+import ImageComponent from '@/components/image';
 import { PortableText } from 'next-sanity';
 
 async function ProjectPage({ 
@@ -24,16 +24,11 @@ async function ProjectPage({
   return (
   
   <div>
-    <h1 className='lg:text-6xl md:text-4xl text-2xl font-serif text-accent md:mb-8 mb-4'>{project.title}</h1>
+    <h1 className='lg:text-6xl md:text-4xl text-2xl font-serif leading-none text-accent md:mb-8 mb-4'>{project.title}</h1>
     <hr className='border-accent md:mb-8 mb-4' />
-    <Image
-    className='h-[37vw] w-full object-cover' 
-    src={project.cover.asset.url} 
-    alt={project.title} 
-    width={project.cover.asset.metadata.dimensions.width} 
-    height={project.cover.asset.metadata.dimensions.height}
-    placeholder='blur'
-    blurDataURL={project.cover.asset.metadata.lqip}
+    <ImageComponent
+    image={project.cover}
+    className='h-[37vw] w-full object-cover'
     />
     <figcaption className='text-sm'>{project.cover.copyright}</figcaption>
     
@@ -55,7 +50,7 @@ async function ProjectPage({
       <div key={quote._key} className='py-4'> 
       <p className='font-serif text-accent text-6xl mb-[-0.5rem]'>“</p>
         <blockquote className='font-serif text-xl md:leading-tight leading-none'>{quote.text}</blockquote>
-        <p className='pt-2'>{`—${quote.author}`}</p>
+        <p className='pt-2'>{`${quote.author}`}</p>
       </div>
       ))}
 
@@ -106,7 +101,7 @@ async function ProjectPage({
           src={item.url} 
           title="Project Video" 
           allowFullScreen 
-          className='w-full h-[50vw]' 
+          className='w-full aspect-video' 
           />
         </div>
         );
@@ -114,13 +109,10 @@ async function ProjectPage({
         return (
         <div key={item._key} className='md:flex md:gap-4 md:pb-4'>
           {item.images.map((image: any) => (
-          <div key={image._key} className='h-full md:mb-0 mb-4'>
-            <Image
-            src={image.asset.url}
-            alt={image.asset.alt || 'Gallery Image'}
-            width={3200}
-            height={2133}
-            className='object-cover w-full h-full'
+          <div key={image._key} className='w-full h-full md:mb-0 mb-4'>
+            <ImageComponent
+              image={image}
+              className='object-cover w-full h-full'
             />
             {image.copyright && (
             <figcaption className='text-sm'>{image.copyright}</figcaption>

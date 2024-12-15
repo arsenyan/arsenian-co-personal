@@ -3,6 +3,7 @@ import Hero from '@/components/page/Hero';
 import PointsList from '@/components/page/PointsList';
 import ProjectList from '@/components/page/ProjectList';
 import Announcement from '@/components/page/Announcement';
+import Head from 'next/head';
 
 export default async function HomePage() {
   const query = `*[_type == "settings"][0]{
@@ -10,13 +11,10 @@ export default async function HomePage() {
     description,
     points,
     projectList,
-    "mainImage": mainImage{
+    "mainImage": mainImage {
+      ...,
       asset->{
-        url,
-        metadata {
-          dimensions { width, height },
-          lqip
-        }
+        ...
       }
     }
   }`;
@@ -24,12 +22,13 @@ export default async function HomePage() {
 
   return (
     <>
+    <Head>
+      <title>{settings.siteTitle}</title>
+      <meta name="description" content={settings.description} />
+    </Head>
     <Hero
-      imageUrl={settings.mainImage.asset.url}
-      imageWidth={settings.mainImage.asset.metadata.dimensions.width}
-      imageHeight={settings.mainImage.asset.metadata.dimensions.height}
-      imageLqip={settings.mainImage.asset.metadata.lqip}
       description={settings.description}
+      mainImage={settings.mainImage}
     />
     <PointsList points={settings.points} />
     <Announcement />

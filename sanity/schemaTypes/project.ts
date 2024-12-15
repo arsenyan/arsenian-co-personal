@@ -13,6 +13,11 @@ export const projectType = defineType ({
             type: 'string'
         }),
         defineField({
+            name: 'year',
+            title: 'Year',
+            type: 'string'
+        }),
+        defineField({
             name: 'slug',
             title: 'Slug',
             type: 'slug',
@@ -25,6 +30,9 @@ export const projectType = defineType ({
             name: 'cover',
             title: 'Cover',
             type: 'image',
+            options: {
+                hotspot: true,
+            },
             fields: [
             {
                 name: 'alt',

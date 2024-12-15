@@ -1,10 +1,9 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
-import "../globals.css"
+import "../globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from "@vercel/analytics/next";
 
 const kommuna = localFont({
   src: ".././fonts/KommunaVariable.woff2",
@@ -15,11 +14,6 @@ const stratos = localFont({
   variable: "--font-stratos-sans",
   weight: "400",
 });
-
-export const metadata: Metadata = {
-  title: "Artem Arsenian",
-  description: "Nomadic art manager, Producer and Curator of Performative Art, Marketing/Digital media Specialist and Researcher",
-};
 
 export default function RootLayout({
   children,
@@ -33,10 +27,10 @@ export default function RootLayout({
       >
         <Header />
         <main className="container px-4 md:mt-20 mt-14">
-        {children} <SanityLive />
-       </main>
-       <Footer />
-       <Analytics/>
+          {children} <SanityLive />
+        </main>
+        <Footer />
+        <Analytics />
       </body>
     </html>
   );
