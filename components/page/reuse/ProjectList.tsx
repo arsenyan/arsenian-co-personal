@@ -1,18 +1,15 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 "use client";
 import { motion } from "motion/react";
 
 import React from 'react';
-import Link from 'next/link';
-import { PortableText } from 'next-sanity';
 import ProjectItem from "@/components/ProjectItem";
+import { PortableTextBlock } from "next-sanity";
 
 interface Project {
   title: string;
   year: string;
   type: string;
-  role: any;
+  role: PortableTextBlock[];
   reference?: {
     slug: {
       current: string;

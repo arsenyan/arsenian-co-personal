@@ -1,12 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
-import { PortableText } from 'next-sanity';
+import { PortableText, PortableTextBlock } from 'next-sanity';
 
 interface Project {
   title: string;
   year: string;
   type: string;
-  role: any;
+  role: PortableTextBlock[];
   reference?: {
     slug: {
       current: string;

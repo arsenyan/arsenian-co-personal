@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
-
 import { getProjectBySlug } from '@/sanity/lib/settings/getProjectBySlug';
 import { notFound } from "next/navigation";
 import ImageComponent from '@/components/image';
@@ -93,8 +91,8 @@ async function ProjectPage({
     </div>
     <hr className='border-accent' />
     <div className='md:mt-8 mt-4'>
-      {project.galleryPage && project.galleryPage.map((item: any) => {
-      if (item._type === 'video') {
+      {project.galleryPage && project.galleryPage.map((item: { _key: string; _type: string; url?: string; images?: { _key: string; asset: { _id: string; metadata: { lqip: string; }; }; hotspot: { x: number; y: number; width: number; height: number; }; crop: { left: number; right: number; top: number; bottom: number; }; copyright?: string; }[] }) => {
+      if (item._type === 'video' && item.url) {
         return (
         <div key={item._key} className='mb-4 bg-black'>
           <iframe 
@@ -105,18 +103,18 @@ async function ProjectPage({
           />
         </div>
         );
-      } else if (item._type === 'gallery') {
+      } else if (item._type === 'gallery' && item.images) {
         return (
         <div key={item._key} className='md:flex md:gap-4 md:pb-4'>
-          {item.images.map((image: any) => (
+          {item.images.map((image: { _key: string; asset: { _id: string; metadata: { lqip: string; }; }; hotspot: { x: number; y: number; width: number; height: number; }; crop: { left: number; right: number; top: number; bottom: number; }; copyright?: string }) => (
           <div key={image._key} className='w-full h-full md:mb-0 mb-4'>
-            <ImageComponent
-              image={image}
-              className='object-cover w-full h-full'
-            />
-            {image.copyright && (
-            <figcaption className='text-sm'>{image.copyright}</figcaption>
-            )}
+        <ImageComponent
+          image={image}
+          className='object-cover w-full h-full'
+        />
+        {image.copyright && (
+        <figcaption className='text-sm'>{image.copyright}</figcaption>
+        )}
           </div>
           ))}
         </div>
