@@ -6,8 +6,9 @@ import { SanityLive } from "@/sanity/lib/live";
 import { Analytics } from "@vercel/analytics/next";
 
 const kommuna = localFont({
-  src: ".././fonts/KommunaVariable.woff2",
+  src: ".././fonts/KommunaNormal1.10.woff",
   variable: "--font-kommuna-serif",
+  weight: "400",
 });
 const stratos = localFont({
   src: ".././fonts/StratosLCRegular.woff",

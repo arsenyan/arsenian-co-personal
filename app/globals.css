@@ -23,10 +23,3 @@
       @apply absolute content-[''] w-full h-[0.06rem] bg-current left-0 bottom-[-0.10rem] scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-bottom-right hover:origin-bottom-left;
   }
 }
-
-
-@layer utilities {
-  .font-serif {
-    font-variation-settings: "wdth" 600;
-  }
-}
