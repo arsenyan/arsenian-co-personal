@@ -13,6 +13,7 @@ export const generateMetadata = async ({ params }: { params: { slug: string } })
     openGraph: {
       title: `${project.title}`,
       description: 'Realised Project',
+      images: `/api/og?title=${encodeURIComponent(project.title)}&image=${encodeURIComponent(project.cover.asset.url)}?w=1200`,
     },
   };
 };

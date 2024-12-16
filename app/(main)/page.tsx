@@ -15,6 +15,7 @@ export const generateMetadata = async (): Promise<Metadata> => {
     openGraph: {
       title: `${settings.siteTitle}`,
       description: 'Artem Arsenian is a nomadic art manager, producer and curator of performative art, marketing/digital media specialist and researcher. Based between France and Germany.',
+      images: '/api/og',
     },
   };
 };

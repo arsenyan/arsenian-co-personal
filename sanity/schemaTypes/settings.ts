@@ -31,6 +31,14 @@ export const settingsType = defineType({
             },
         }),
         defineField({
+            name: 'ogBg',
+            type: 'image',
+            title: 'Og Bg',
+            options: {
+                hotspot: true,
+            },
+        }),
+        defineField({
             name: 'points',
             type: 'array',
             of: [{ 
