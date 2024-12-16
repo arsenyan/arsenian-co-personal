@@ -17,6 +17,7 @@ interface EducationFellowshipsProps {
 
 const EducationFellowships: React.FC<EducationFellowshipsProps> = ({ educationFellowships }) => {
   return <motion.div
+  id='education-fellowships'
   initial={{ opacity: 0, y: 8 }}
   animate={{ opacity: 1, y: 0 }}
   transition={{ delay: 0.2, duration: 0.3 }}

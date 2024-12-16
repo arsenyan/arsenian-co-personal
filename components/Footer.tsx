@@ -9,7 +9,7 @@ const menuColumn1 = [
   ];
 
   const menuColumn2 = [
-    { href: "/cv", label: "Education" },
+    { href: "/cv#education-fellowships", label: "Education" },
     { href: "/cv", label: "Work Experience" },
     { href: "/", label: " " },
   ];
