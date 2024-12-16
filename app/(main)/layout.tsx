@@ -26,21 +26,20 @@ export default async function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body
-        className={`${kommuna.variable} ${stratos.variable} antialiased`}
-      >
-        <Header />
-        <main className="container px-4 md:mt-20 mt-14">
-          {children} 
-          {(await draftMode()).isEnabled && (
-          <>
-            <VisualEditing />
-            <DisableDraftMode />
-          </>
-        )}
-          <SanityLive />
-        </main>
+      <body className={`${kommuna.variable} ${stratos.variable} antialiased`}>
+       <Header />
+          <main className="container px-4 md:mt-20 mt-14">
+            {children}
+          </main>
         <Footer />
+        
+        {(await draftMode()).isEnabled && (
+              <>
+                <VisualEditing />
+                <DisableDraftMode />
+              </>
+            )}
+        <SanityLive />
         <Analytics />
       </body>
     </html>
