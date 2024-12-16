@@ -6,6 +6,7 @@
 
 import { visionTool } from '@sanity/vision'
 import { defineConfig } from 'sanity'
+import { presentationTool } from "sanity/presentation";
 import { deskTool } from 'sanity/desk'
 import { StructureBuilder } from 'sanity/desk'
 
@@ -54,6 +55,15 @@ export default defineConfig({
             S.divider(),
             singletonListItem(S, 'settings', 'Settings').icon(RiSettingsLine),
           ]),
+    }),
+    presentationTool({
+      previewUrl: {
+        origin: process.env.NEXT_PUBLIC_BASE_URL,
+        preview: "/",
+        previewMode: {
+          enable: "/api/draft-mode/enable",
+        },
+      },
     }),
     visionTool({ defaultApiVersion: apiVersion }),
   ],

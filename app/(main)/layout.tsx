@@ -4,6 +4,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { SanityLive } from "@/sanity/lib/live";
 import { Analytics } from "@vercel/analytics/next";
+import { VisualEditing } from "next-sanity";
+import { draftMode } from "next/headers";
+import { DisableDraftMode } from "@/components/DisableDraftMode";
 
 const kommuna = localFont({
   src: ".././fonts/KommunaNormal1.10.woff",
@@ -16,11 +19,11 @@ const stratos = localFont({
   weight: "400",
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
@@ -28,7 +31,14 @@ export default function RootLayout({
       >
         <Header />
         <main className="container px-4 md:mt-20 mt-14">
-          {children} <SanityLive />
+          {children} 
+          {(await draftMode()).isEnabled && (
+          <>
+            <VisualEditing />
+            <DisableDraftMode />
+          </>
+        )}
+          <SanityLive />
         </main>
         <Footer />
         <Analytics />
