@@ -36,7 +36,7 @@ async function ProjectPage({
   return (
   
   <div>
-    <h1 className='lg:text-6xl md:text-4xl text-2xl font-serif leading-none text-accent md:mb-8 mb-4'>{project.title}</h1>
+    <h1 className='lg:text-6xl md:text-4xl text-2xl font-serif leading-none md:mb-8 mb-4'><span className='text-accent'>{project.title}</span> {project.year}</h1>
     <hr className='border-accent md:mb-8 mb-4' />
     <ImageComponent
     image={project.cover}
