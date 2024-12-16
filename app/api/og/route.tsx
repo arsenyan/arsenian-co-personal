@@ -40,10 +40,6 @@ export async function GET(req: { url: string | URL; }) {
     const title = searchParams.has("title")
       ? searchParams.get("title")?.toLowerCase()
       : "artem arsenian";
-    // Example: &subtitle=https://www.xiohoo.com
-    const subtitle = searchParams.has("subtitle")
-      ? searchParams.get("subtitle")?.toLowerCase()
-      : "arsenian.co";
 
     const image = searchParams.has("image")
       ? searchParams.get("image")

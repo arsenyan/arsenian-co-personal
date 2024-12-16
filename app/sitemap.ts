@@ -26,7 +26,7 @@ return [
         changeFrequency: 'weekly',
         priority: 0.8,
     },
-    ...projects.map((project: { slug: { current: any; }; }) => ({
+    ...projects.map((project: { slug: { current: string; }; }) => ({
         url: `${baseUrl}/projects/${project.slug.current}`,
         lastModified: new Date(),
         changeFrequency: 'monthly',
