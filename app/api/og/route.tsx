@@ -26,7 +26,7 @@ export async function GET(req: { url: string | URL; }) {
 
     // You can use another font if you subscribe to vercel Pro plan with code size limit of 2MB
     const font2 = await fetch(
-       new URL("../.././fonts/KommunaRegular.woff", import.meta.url)
+       new URL("../.././fonts/KommunaNormal1.10.woff", import.meta.url)
      );
 
      if (!font2.ok) {
@@ -86,7 +86,7 @@ export async function GET(req: { url: string | URL; }) {
             color: subtitleTextColor,
             lineHeight: titleLineHeight,
             letterSpacing: titleLetterSpacing,
-            fontFamily: "Regular",
+            fontFamily: "Kommuna",
               }}
             >
               {title}
@@ -100,7 +100,7 @@ export async function GET(req: { url: string | URL; }) {
             color: subtitleTextColor,
             lineHeight: titleLineHeight,
             letterSpacing: titleLetterSpacing,
-            fontFamily: "Inyer",
+            fontFamily: "Stratos",
               }}
             >
             </div>
@@ -118,7 +118,7 @@ export async function GET(req: { url: string | URL; }) {
             style: "normal",
           },
            {
-             name: "Regular",
+             name: "Kommuna",
              data: fontData2,
              style: "normal",
            },

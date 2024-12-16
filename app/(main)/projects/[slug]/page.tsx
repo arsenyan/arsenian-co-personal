@@ -5,7 +5,7 @@ import ImageComponent from '@/components/image';
 import { PortableText } from 'next-sanity';
 
 export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
-  const { slug } = params;
+  const { slug } = await params;
   const project = await getProjectBySlug(slug);
   return {
     title: `${project.title} | Artem Arsenian`,
