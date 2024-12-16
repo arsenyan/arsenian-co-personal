@@ -92,7 +92,7 @@ async function ProjectPage({
      )}
      
      {project.credits  && (
-      <div className='credits py-4'>
+      <div className='credits md:py-0 py-4'>
       <h2 className='lg:text-4xl md:text-3xl text-xl font-serif text-accent md:mb-4 mb-2'>credits</h2>
       <PortableText 
         value={project.credits}
