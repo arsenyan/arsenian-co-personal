@@ -1,3 +1,4 @@
+import { Metadata } from "next";
 import localFont from "next/font/local";
 import "../globals.css";
 import Header from "@/components/Header";
@@ -7,6 +8,17 @@ import { Analytics } from "@vercel/analytics/next";
 import { VisualEditing } from "next-sanity";
 import { draftMode } from "next/headers";
 import { DisableDraftMode } from "@/components/DisableDraftMode";
+import { ViewTransitions } from "next-view-transitions";
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://arsenian.co"),
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    images: '/api/og',
+  },
+};
 
 const kommuna = localFont({
   src: ".././fonts/KommunaNormal1.10.woff",
@@ -25,10 +37,11 @@ export default async function RootLayout({
   children: React.ReactNode;
 }) {
   return (
+    <ViewTransitions>
     <html lang="en">
       <body className={`${kommuna.variable} ${stratos.variable} antialiased`}>
        <Header />
-          <main className="container px-4 md:mt-20 mt-14">
+        <main className="container px-4 md:mt-20 mt-14">
             {children}
           </main>
         <Footer />
@@ -43,5 +56,6 @@ export default async function RootLayout({
         <Analytics />
       </body>
     </html>
+    </ViewTransitions>
   );
 }

@@ -23,3 +23,39 @@
       @apply absolute content-[''] w-full h-[0.06rem] bg-current left-0 bottom-[-0.10rem] scale-x-0 hover:scale-x-100 transition-transform duration-300 origin-bottom-right hover:origin-bottom-left;
   }
 }
+
+@layer view-transitions {
+  /* Анимация старого контента: исчезновение через размытие */
+  ::view-transition-old(root) {
+    animation: blurOut 0.5s forwards;
+  }
+
+  /* Анимация нового контента: появление через размытие */
+  ::view-transition-new(root) {
+    animation: blurIn 0.5s forwards;
+  }
+
+  @keyframes blurIn {
+    from {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+
+  @keyframes blurOut {
+    from {
+      opacity: 1;
+      filter: blur(0);
+    }
+    to {
+      opacity: 0;
+      filter: blur(10px);
+    }
+  }
+}
+
+

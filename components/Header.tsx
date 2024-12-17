@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
+import Link from 'next/link';
 import MobileMenu from "./MobileMenu";
 
 const menuItems = [
@@ -19,7 +19,7 @@ function Header() {
 
   return (
     <>
-      <header className={`flex justify-between items-center lowercase fixed w-full z-50 top-0 backdrop-blur-sm ${isMenuOpen ? "bg-transparent" : "bg-white/30"}`}>
+      <header className={`view-transition-none flex justify-between items-center lowercase fixed w-full z-50 top-0 backdrop-blur-sm ${isMenuOpen ? "bg-transparent" : "bg-white/30"}`}>
         <div className="container flex px-4 md:py-4 py-2 justify-between items-center">
           <div className={`logo ${isMenuOpen ? "text-white" : "text-accent"}`}>
             <Link href="/" className="text-inherit" onClick={() => setIsMenuOpen(false)}>
