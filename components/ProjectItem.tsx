@@ -28,14 +28,14 @@ const ProjectItem: React.FC<ProjectItemProps> = ({ project }) => {
 
   const content = (
     <div className={containerStyles}>
-      <div className='lg:text-3xl md:text-2xl text-xl font-serif lg:row-span-1 md:row-span-2 row-span-3'>
+      <div className='row-span-3 font-serif text-xl lg:text-3xl md:text-2xl lg:row-span-1 md:row-span-2'>
         {project.year}
       </div>
       <div className={titleClass}>
         {project.title}
       </div>
-      <div className='lg:col-span-2 md:col-span-3 lg:justify-self-auto md:justify-self-end lg:text-left md:text-right col-span-3'>{project.type}</div>
-      <div className='lg:col-span-3 md:col-span-3 col-span-3'><PortableText value={project.role} /></div>
+      <div className='col-span-3 lg:col-span-2 md:col-span-3 lg:justify-self-auto md:justify-self-end lg:text-left md:text-right'>{project.type}</div>
+      <div className='col-span-3 lg:col-span-3 md:col-span-3'><PortableText value={project.role} /></div>
     </div>
   );
 

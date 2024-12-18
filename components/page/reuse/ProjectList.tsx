@@ -24,15 +24,15 @@ interface ProjectListProps {
 
 const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
   return (
-    <div>
+    <>
       <motion.h2 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }} 
-        className='font-serif lg:text-6xl md:text-4xl text-2xl md:mb-10 mb-4'>
+        className='mb-4 font-serif text-2xl lg:text-6xl md:text-4xl md:mb-10'>
           projects
       </motion.h2>
-      <motion.ul className='flex flex-col divide-y border-t border-accent divide-accent'>
+      <motion.ul className='flex flex-col border-t divide-y border-accent divide-accent'>
       {projects.map((project, index) => (
         <motion.li
         className='group'
@@ -45,7 +45,7 @@ const ProjectList: React.FC<ProjectListProps> = ({ projects }) => {
         </motion.li>
       ))}
       </motion.ul>
-    </div>
+    </>
   );
 };
 

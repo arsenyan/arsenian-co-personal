@@ -22,7 +22,7 @@ export default async function CV() {
   const { data: cv } = await sanityFetch({ query });
 
   return (
-    <div className='grid md:grid-cols-2 grid-cols-1 md:gap-6 gap-16'>
+    <div className='grid grid-cols-1 gap-16 md:grid-cols-2 md:gap-6'>
       <Work work={cv.work} />
       <EducationFellowships educationFellowships={cv.educationFellowships} />
     </div>

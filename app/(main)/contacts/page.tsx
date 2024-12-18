@@ -25,8 +25,8 @@ export default async function CV() {
   return (
     <>
     <div className="h-[60vh]">
-      <h1 className="font-serif lg:text-6xl md:text-4xl text-2xl md:pb-8 pb-4">Contacts</h1>
-      <hr className="border-accent md:pb-8 pb-4" />
+      <h1 className="pb-4 font-serif text-2xl lg:text-6xl md:text-4xl md:pb-8">Contacts</h1>
+      <hr className="pb-4 border-accent md:pb-8" />
       <PortableText 
         value={settings.contacts} 
         components={{

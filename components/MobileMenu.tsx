@@ -18,13 +18,13 @@ function MobileMenu({ isOpen, toggleMenu, menuItems }: MobileMenuProps) {
     <>
       
       {isOpen && (
-        <div className="fixed inset-0 bg-accent p-4 pt-14 z-40 flex flex-col items-center justify-center overflow-auto">
-          <nav className="flex w-full pt-2 border-t border-white flex-col gap-y-0">
+        <div className="fixed inset-0 z-40 flex flex-col items-center justify-center p-4 overflow-auto bg-accent pt-14">
+          <nav className="flex flex-col w-full pt-2 border-t border-white gap-y-0">
             {menuItems.map((item) => (
               <Link
                 key={item.label}
                 href={item.href}
-                className="text-white font-serif lowercase text-xl"
+                className="font-serif text-xl text-white lowercase"
                 onClick={toggleMenu}
               >
                 {item.label}
@@ -32,13 +32,13 @@ function MobileMenu({ isOpen, toggleMenu, menuItems }: MobileMenuProps) {
             ))}
           </nav>
           <hr className="w-full my-2 border-white" />
-          <nav className="flex w-full h-full flex-col gap-y-0">
-          <a className="text-white font-serif lowercase text-xl" href="mailto:artem@arsenian.co">artem@arsenian.co</a>
-          <a className="text-white font-serif lowercase text-xl" href="https://instagram.com/artefactpage">instagram</a>
-          <a className="text-white font-serif lowercase text-xl" href="https://facebook.com/artefactpage">facebook</a>
-          <a className="text-white font-serif lowercase text-xl" href="https://t.me/teeema">telegram</a>
-          <a className="text-white font-serif lowercase text-xl" href="https://www.linkedin.com/in/artyomarsenyan/">linkedin</a>
-          <a className="text-white font-serif lowercase text-xl" href="https://github.com/artefactpage">github</a>
+          <nav className="flex flex-col w-full h-full gap-y-0">
+          <a className="font-serif text-xl text-white lowercase" href="mailto:artem@arsenian.co">artem@arsenian.co</a>
+          <a className="font-serif text-xl text-white lowercase" href="https://instagram.com/artefactpage">instagram</a>
+          <a className="font-serif text-xl text-white lowercase" href="https://facebook.com/artefactpage">facebook</a>
+          <a className="font-serif text-xl text-white lowercase" href="https://t.me/teeema">telegram</a>
+          <a className="font-serif text-xl text-white lowercase" href="https://www.linkedin.com/in/artyomarsenyan/">linkedin</a>
+          <a className="font-serif text-xl text-white lowercase" href="https://github.com/artefactpage">github</a>
           </nav>
           <div className="w-full text-white">artem arsenian, 2024</div>
         </div>

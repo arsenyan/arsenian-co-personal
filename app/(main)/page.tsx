@@ -37,10 +37,6 @@ export default async function HomePage() {
 
   return (
     <>
-    <Head>
-      <title>{settings.siteTitle}</title>
-      <meta name="description" content={settings.description} />
-    </Head>
     <Hero
       description={settings.description}
       mainImage={settings.mainImage}

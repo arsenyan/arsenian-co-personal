@@ -16,9 +16,9 @@ const menuColumn1 = [
 
 const Footer: React.FC = () => {
     return (
-        <footer className='bg-accent text-white mt-14'>
+        <footer className='text-white bg-accent mt-14'>
             <div className='container px-4 py-4'>
-                <div className='md:flex md:justify-between md:items-top grid gap-5 pb-5 md:divide-y-0 divide-y md:border-b-0 border-b border-white divide-white lowercase'>
+                <div className='grid gap-5 pb-5 lowercase border-b border-white divide-y divide-white md:flex md:justify-between md:items-top md:divide-y-0 md:border-b-0'>
                     <div className='grid grid-cols-2 gap-6'>
                         <div className='grid justify-items-start'>{menuColumn1.map((item) => (
                            <Link 
@@ -39,7 +39,7 @@ const Footer: React.FC = () => {
                             </Link>
                         ))}</div>
                     </div>
-                    <div className='grid grid-cols-2 gap-6 md:pt-0 pt-5'>
+                    <div className='grid grid-cols-2 gap-6 pt-5 md:pt-0'>
                         <div className='grid justify-items-start'>
                             <a href="mailto:artem@arsenian.co" className='underline-animation'>artem@arsenian.co</a>
                             <a href="https://instagram.com/artefactpage" className='underline-animation'>instagram</a>
@@ -52,7 +52,7 @@ const Footer: React.FC = () => {
                             </div>
                     </div>
                 </div>
-                <p className='md:mt-14 mt-8'>artem arsenian, 2024</p>
+                <p className='mt-8 md:mt-14'>artem arsenian, 2024</p>
             </div>
         </footer>
     );

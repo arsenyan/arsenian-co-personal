@@ -20,7 +20,7 @@ function Header() {
   return (
     <>
       <header className={`view-transition-none flex justify-between items-center lowercase fixed w-full z-50 top-0 backdrop-blur-sm ${isMenuOpen ? "bg-transparent" : "bg-white/30"}`}>
-        <div className="container flex px-4 md:py-4 py-2 justify-between items-center">
+        <div className="container flex items-center justify-between px-4 py-2 md:py-4">
           <div className={`logo ${isMenuOpen ? "text-white" : "text-accent"}`}>
             <Link href="/" className="text-inherit" onClick={() => setIsMenuOpen(false)}>
               Artem Arsenian
@@ -31,7 +31,7 @@ function Header() {
               <Link
                 key={item.label}
                 href={item.href}
-                className="underline-animation hover:text-accent transition-all"
+                className="transition-all underline-animation hover:text-accent"
               >
                 {item.label}
               </Link>
