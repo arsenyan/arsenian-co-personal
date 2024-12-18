@@ -7,6 +7,10 @@ import { PortableText } from 'next-sanity';
 export const generateMetadata = async ({ params }: { params: { slug: string } }): Promise<Metadata> => {
   const { slug } = await params;
   const project = await getProjectBySlug(slug);
+  if (!project) {
+    return notFound();
+  }
+
   return {
     title: `${project.title} | Artem Arsenian`,
     description: 'Realised Project',

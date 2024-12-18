@@ -3,7 +3,6 @@ import Hero from '@/components/page/Hero';
 import PointsList from '@/components/page/PointsList';
 import ProjectList from '@/components/page/ProjectList';
 import Announcement from '@/components/page/Announcement';
-import Head from 'next/head';
 import { Metadata } from 'next';
 
 export const generateMetadata = async (): Promise<Metadata> => {
